@@ -25,7 +25,9 @@ const useGetForecast = () => {
     const { Key } = cityData;
 
     const response = await fetch(
-      `http://dataservice.accuweather.com/currentconditions/v1/${Key}?apikey=ODd7w819augbgLxVRUK42iw9Tu2FNIga`
+      `http://dataservice.accuweather.com/currentconditions/v1/${Key}?apikey=${
+        import.meta.env.VITE_WEATHER_API_KEY
+      }`
     );
     const data = await response.json();
 
@@ -34,7 +36,9 @@ const useGetForecast = () => {
 
   const getCityData = async (city) => {
     const response = await fetch(
-      `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=ODd7w819augbgLxVRUK42iw9Tu2FNIga&q=${city}`
+      `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${
+        import.meta.env.VITE_WEATHER_API_KEY
+      }&q=${city}`
     );
     const data = await response.json();
 

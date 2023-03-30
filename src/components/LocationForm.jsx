@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-const KEY = 'ODd7w819augbgLxVRUK42iw9Tu2FNIga';
-
 const LocationForm = ({ onFormSubmit }) => {
   const [cityTerm, setCityTerm] = useState('');
 
