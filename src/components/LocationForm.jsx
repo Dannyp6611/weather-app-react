@@ -8,7 +8,11 @@ const LocationForm = ({ onFormSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    onFormSubmit(cityTerm.trim());
+    const searchTerm = cityTerm.trim();
+
+    if (!searchTerm) return;
+    onFormSubmit(searchTerm);
+    setCityTerm('');
   };
 
   return (
